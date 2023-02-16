@@ -37,6 +37,7 @@ app.use('/api/v1/avisos', require('./routes/comunicacion/avisos'));
 // Administracion
 app.use('/api/v1/condominios', require('./routes/administracion/condominios'));
 app.use('/api/v1/condominos', require('./routes/administracion/condominos'));
+app.use('/api/v1/condominiums', require('./routes/prueba/condominiums'));
 app.use('/api/v1/areasComunales', require('./routes/administracion/areasComunales'));
 app.use('/api/v1/propietarios', require('./routes/administracion/propietarios'));
 app.use('/api/v1/tipos_inmuebles', require('./routes/administracion/tipos_inmuebles'));
