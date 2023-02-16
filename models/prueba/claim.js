@@ -31,7 +31,7 @@ const ClaimSchema = Schema({
         required: true
     },
     
-},{collection: 'prueba_Claim'});
+},{collection: 'prueba_claim'});
 
 ClaimSchema.method('toJSON', function() {
     const { __v, ...object } = this.toObject();
