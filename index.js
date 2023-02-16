@@ -42,11 +42,14 @@ app.use('/api/v1/tipos_inmuebles', require('./routes/administracion/tipos_inmueb
 
 //Emergencia
 app.use('/api/v1/emergencias', require('./routes/emergencia/emergencias'));
+app.use('/api/v1/emergencys', require('./routes/prueba/emergencys'));
 app.use('/api/v1/login/', require('./routes/auth'));
 
 // Busquedas
 app.use('/api/v1/todo/', require('./routes/busquedas'));
 app.use('/api/v1/upload', require('./routes/uploads'));
+
+//Prueba
 
 app.listen(process.env.PORT, () => {
     console.log('Servidor ' + process.env.PORT)
