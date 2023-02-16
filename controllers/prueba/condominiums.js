@@ -8,12 +8,24 @@ const { DateTime } = require('luxon');
 const { Console } = require('console');
 
 
+const getCondominiumId = async(req, res) => {
+
+    const id  = req.params.id;
+
+    const  condomini =  await Condominium.find(id);
+    
+        console.log("condo........",condomini)
+    
+        res.json(condomini);
+        
+}
+
 
 
 const getCondominium = async(req, res) => {
     
 
-const  condomini =  await Condominium.find();
+const  condomini =  await Condominium.find(id);
 
     console.log("condo........",condomini)
 
@@ -139,6 +151,7 @@ const deleteCondominium = async (req, res = response) => {
 
 module.exports = {
     getCondominium,
+    getCondominiumId,
     createCondominium,
     updateCondominium,
     deleteCondominium

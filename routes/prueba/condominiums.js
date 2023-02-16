@@ -4,7 +4,7 @@
 const { Router } = require('express');
 const { body } = require('express-validator');
 
-const { getCondominium, createCondominium,updateCondominium, deleteCondominium} = require('../../controllers/prueba/condominiums')
+const { getCondominium, createCondominium,updateCondominium, deleteCondominium,getCondominiumId} = require('../../controllers/prueba/condominiums')
 const { validarCampos } = require('../../middlewares/validar-campos');
 const { validarJWT } = require('../../middlewares/validar-jwt');
 
@@ -12,7 +12,7 @@ const { validarJWT } = require('../../middlewares/validar-jwt');
 
 const router = Router();
 
-router.get( '/',getCondominium);
+router.get( '/:id',getCondominiumId);
 
 router.post('/',createCondominium);
 
