@@ -1,7 +1,7 @@
 const { timeStamp } = require('console');
 const { Schema, model } = require('mongoose');
 
-
+//d
 const CondominiumSchema = Schema({
     _id: {
         type: Number,
