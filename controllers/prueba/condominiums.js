@@ -11,13 +11,13 @@ const { Console } = require('console');
 
 
 const getCondominium = async(req, res) => {
+    
 
-const  condominium =  await Condominium.find();
+const  condomini =  await Condominium.find();
 
-    res.json({
-        ok: true,
-        condominium: condominium
-    });
+    console.log("condo........",condomini)
+
+    res.json(condomini);
     
 }
 
