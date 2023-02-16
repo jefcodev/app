@@ -29,6 +29,7 @@ app.use('/api/v1/formas_pagos', require('./routes/finanzas/formas_pagos'))
 
 // Comunicación
 app.use('/api/v1/reclamos', require('./routes/comunicacion/reclamos'));
+app.use('/api/v1/claims', require('./routes/prueba/claims'));
 app.use('/api/v1/eventos', require('./routes/comunicacion/eventos'));
 app.use('/api/v1/reuniones', require('./routes/comunicacion/reuniones'));
 app.use('/api/v1/avisos', require('./routes/comunicacion/avisos'));
