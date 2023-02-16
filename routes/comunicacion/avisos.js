@@ -9,12 +9,12 @@ const { validarJWT } = require('../../middlewares/validar-jwt');
 
 const router = Router();
 
-router.get( '/',validarJWT,getAviso );
-router.post('/',[
+router.get( '/',getAviso );
+router.post('/',/* [
     validarJWT,
     body('asunto','El asunto es obligatorio').not().isEmpty(),
     validarCampos
-],createAviso)
+], */createAviso)
 
 router.put('/:id', [
     validarJWT,

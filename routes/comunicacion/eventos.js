@@ -13,9 +13,9 @@ const { validarJWT } = require('../../middlewares/validar-jwt');
 const router = Router();
 
 
-router.get( '/',validarJWT,getEvento);
+router.get( '/',getEvento);
 
-router.post('/',[
+router.post('/',[/* 
     validarJWT,
     body('asunto','El asunto es obligatorio').not().isEmpty(),
     body('motivo', 'El motivo es obligatorio').not().isEmpty(),
@@ -24,14 +24,14 @@ router.post('/',[
     body('hora_inicio', 'La hora de inicio es obligatoria').not().isEmpty(),
     body('hora_fin', 'La hora de fin es obligatoria').not().isEmpty(),
     body('lugar', 'El lugar es obligatorio').not().isEmpty(),
-    validarCampos
+    validarCampos */
 
 ],createEvento);
 
 router.put('/:id', [
-    validarJWT,
+   /*  validarJWT,
     body('estado_evento', 'El estado del evento es obligatorio').not().isEmpty(),
-    validarCampos
+    validarCampos */
 ], updateEvento);
 
 

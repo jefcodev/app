@@ -8,7 +8,7 @@ const { validarCampos } = require('../../middlewares/validar-campos');
 const { validarJWT } = require('../../middlewares/validar-jwt');
 const router = Router();
 
-router.get( '/',validarJWT,getReclamo );
+router.get( '/',getReclamo );
 
 router.post('/',[
     validarJWT,
@@ -20,7 +20,7 @@ router.post('/',[
     validarCampos
 ],createReclamo);
 
-router.put('/:id', [
+router.put('/:id',/*  [
     validarJWT,
     body('asunto','El asunto es obligatorio').not().isEmpty(),
     body('descripcion', 'La descripción es obligatorio').not().isEmpty(),
@@ -28,8 +28,8 @@ router.put('/:id', [
     body('hora', 'La hora es obligatorio').not().isEmpty(),
     body('lugar', 'El lugar es obligatorio').not().isEmpty(),
     validarCampos
-], updateReclamo);
+], */ updateReclamo);
 
-router.delete('/:id', validarJWT, deleteReclamo);
+router.delete('/:id', deleteReclamo);
 
 module.exports = router;
