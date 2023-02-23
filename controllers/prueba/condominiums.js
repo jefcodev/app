@@ -20,35 +20,22 @@ const getCondominium = async(req, res) => {
 const getCondominiumId = async(req, res) => {
       
     const id = req.params.id
-        
+
     const  condominium =  await Condominium.findById(id);
-    console.log("condo........",condominium)
-    
     if (!condominium) {
-        // si no se encontró ningún registro, devolver una respuesta 404 al usuario
-        res.status(404).json({ message: 'Registro no encontrado' });
+        res.status(404).json('Registro no encontrado');
     } else {
-        // si se encontró un registro, devolver el objeto JSON del registro al usuario
         res.json(condominium);
     }
         
 }
 
 const createCondominium = async (req, res = response) =>{
-
-    
-    const localTime = moment().tz("America/Guayaquil").toDate()
-    const uid = req.uid;
     const condominium = new Condominium({
-        id_usuario: uid,
-        fecha_hora: localTime,
         ...req.body
     });
-
     try {
-
         const condominiumDB = await condominium.save();
-
         res.json({
         ok: true,
         condominium: condominiumDB
