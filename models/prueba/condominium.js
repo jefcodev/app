@@ -36,7 +36,8 @@ const CondominiumSchema = Schema({
 },{collection:'prueba_condominium'});
 
 CondominiumSchema.method('toJSON', function() {
-    const { __v, ...object } = this.toObject();
+    const { __v, _id, ...object } = this.toObject();
+    object.id = _id;
     return object;
 })
 

@@ -12,6 +12,7 @@ const { validarJWT } = require('../../middlewares/validar-jwt');
 
 const router = Router();
 
+router.get( '/',getCondominium);
 router.get( '/:id',getCondominiumId);
 
 router.post('/',createCondominium);
