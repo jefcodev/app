@@ -43,8 +43,6 @@ app.use('/api/v1/propietarios', require('./routes/administracion/propietarios'))
 app.use('/api/v1/tipos_inmuebles', require('./routes/administracion/tipos_inmuebles'));
 
 //Emergencia
-app.use('/api/v1/emergencias', require('./routes/emergencia/emergencias'));
-app.use('/api/v1/emergencys', require('./routes/prueba/emergencys'));
 app.use('/api/v1/login/', require('./routes/auth'));
 
 // Busquedas
