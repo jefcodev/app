@@ -8,26 +8,21 @@ const { DateTime } = require('luxon');
 const { Console } = require('console');
 
 
-const getCondominiumId = async(req, res) => {
-
-  
-
-    const  condomini =  await Condominium.findById(id);
-
-        console.log("condo........",condomini)
-    
-        res.json(condomini);
-        
-}
-
-
 
 const getCondominium = async(req, res) => {
 
-    const  condomini =  await Condominium.find();
-    console.log("condo........",condomini)
-    res.json(condomini);
+    const  condominium =  await Condominium.find();
+    console.log("condo........",condominium)
+    res.json(condominium);
     
+}
+
+const getCondominiumId = async(req, res) => {
+    const id = req.params.id
+    const  condominium =  await Condominium.findById(id);
+        console.log("condo........",condominium)
+        res.json(condominium);
+        
 }
 
 const createCondominium = async (req, res = response) =>{
