@@ -18,10 +18,19 @@ const getCondominium = async(req, res) => {
 }
 
 const getCondominiumId = async(req, res) => {
+      
     const id = req.params.id
+        
     const  condominium =  await Condominium.findById(id);
-        console.log("condo........",condominium)
+    console.log("condo........",condominium)
+    
+    if (!condominium) {
+        // si no se encontró ningún registro, devolver una respuesta 404 al usuario
+        res.status(404).json({ message: 'Registro no encontrado' });
+    } else {
+        // si se encontró un registro, devolver el objeto JSON del registro al usuario
         res.json(condominium);
+    }
         
 }
 
