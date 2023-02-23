@@ -14,7 +14,6 @@ const getCondominiumId = async(req, res) => {
 
     const  condomini =  await Condominium.findById(id);
 
-    
         console.log("condo........",condomini)
     
         res.json(condomini);
@@ -24,9 +23,8 @@ const getCondominiumId = async(req, res) => {
 
 
 const getCondominium = async(req, res) => {
-    
-const  condomini =  await Condominium.find();
 
+    const  condomini =  await Condominium.find();
     console.log("condo........",condomini)
     res.json(condomini);
     
