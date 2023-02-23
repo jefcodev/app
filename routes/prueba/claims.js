@@ -3,10 +3,12 @@
 */
 const { Router } = require('express');
 const { body } = require('express-validator');
-const { getReclamo, createReclamo, updateReclamo, deleteReclamo} = require('../../controllers/prueba/claims')
+const { getReclamo, createReclamo, updateReclamo, deleteReclamo, getReclamoById} = require('../../controllers/prueba/claims')
 const router = Router();
 
 router.get( '/',getReclamo );
+
+router.get( '/:id',getReclamoById);
 
 router.post('/',createReclamo);
 

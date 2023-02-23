@@ -14,6 +14,17 @@ const  reclamo =  await Reclamo.find();
     
 }
 
+const getReclamoById = async(req, res) => {
+
+    const id  = req.params.id;
+    const uid = req.uid;
+        
+        const reclamo = await Reclamo.findById( id );
+        
+    }
+
+
+
 const createReclamo = async (req, res = response) =>{
     const uid = req.uid;
     const reclamo = new Reclamo({
@@ -130,5 +141,6 @@ module.exports = {
     getReclamo,
     createReclamo,
     updateReclamo,
-    deleteReclamo
+    deleteReclamo,
+    getReclamoById
 }
